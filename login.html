@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function iniciarSesion() {
+            alert("¡Bienvenido!");
+            document.querySelector('.login-container').style.display = 'none';
+            document.body.innerHTML += '<h1 style="text-align:center;">Bienvenido a la página</h1>';
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" placeholder="Usuario" required>
+        <input type="password" placeholder="Contraseña" required>
+        <button onclick="iniciarSesion()">Entrar</button>
+    </div>
+</body>
+</html>
