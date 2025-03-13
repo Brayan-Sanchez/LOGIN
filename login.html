@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login y Registro</title>
     <link rel="stylesheet" href="style.css">
     <script>
         function iniciarSesion() {
@@ -11,14 +11,42 @@
             document.querySelector('.login-container').style.display = 'none';
             document.body.innerHTML += '<h1 style="text-align:center;">Bienvenido a la página</h1>';
         }
+
+        function registrarUsuario() {
+            alert("¡Usuario registrado exitosamente!");
+            document.querySelector('.login-container').style.display = 'none';
+            document.body.innerHTML += '<h1 style="text-align:center;">Gracias por registrarte</h1>';
+        }
+
+        function mostrarLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        }
+
+        function mostrarRegistro() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
     </script>
 </head>
 <body>
     <div class="login-container">
-        <h2>Iniciar Sesión</h2>
-        <input type="text" placeholder="Usuario" required>
-        <input type="password" placeholder="Contraseña" required>
-        <button onclick="iniciarSesion()">Entrar</button>
+        <div id="login-form">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button onclick="iniciarSesion()">Entrar</button>
+            <pp class="register-link">¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()" class="register-link-a">Regístrate</a></p>
+        </div>
+
+        <div id="register-form" class="hidden">
+            <h2>Registro</h2>
+            <input type="text" placeholder="Nombre de usuario" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button onclick="registrarUsuario()">Registrarse</button>
+            <pp class="login-register-link">¿Ya tienes cuenta? <a href="#" onclick="mostrarLogin()" class="login-register-link-a">Inicia sesión</a></p>
+        </div>
     </div>
 </body>
 </html>

@@ -46,3 +46,27 @@ body {
 .login-container button:hover {
     background: #0056b3;
 }
+.toggle-link {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 10px;
+    transition: color 0.3s;
+}
+
+.toggle-link:hover {
+    color: #0056b3;
+}
+
+.fade {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: scale(1);
+}
